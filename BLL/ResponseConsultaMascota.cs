@@ -22,5 +22,12 @@ namespace BLL
             public string Mensaje { get; set; }
             public Mascota mascota { get; set; }
         }
+
+    public class ConteoMascotaTipoRespuesta {
+
+        public bool Error { get; set; }
+        public string Mensaje { get; set; }
+        public int Cuenta { get; set; }
     }
+}
 

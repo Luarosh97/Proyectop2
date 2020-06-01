@@ -144,6 +144,30 @@ namespace BLL
 
         }
 
+        public SumarServicioRespuesta SumarValoresServicios()
+        {
+            SumarServicioRespuesta respuesta = new SumarServicioRespuesta();
+            try
+            {
+
+                conexion.Open();
+                respuesta.Suma= serviciorepositorio.SumarValorServicios();
+                conexion.Close();
+                respuesta.Error = false;
+                respuesta.Mensaje = "Se consultan los Datos";
+
+                return respuesta;
+            }
+            catch (Exception e)
+            {
+                respuesta.Mensaje = $"Error de la Aplicacion: {e.Message}";
+                respuesta.Error = true;
+                return respuesta;
+            }
+            finally { conexion.Close(); }
+
+        }
+
 
     }
 }

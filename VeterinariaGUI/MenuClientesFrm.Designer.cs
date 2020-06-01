@@ -39,6 +39,7 @@
             this.TipoConsultaCmb = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.DateClientes = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CerrarBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizarBtn)).BeginInit();
@@ -95,13 +96,14 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(0, 186);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(777, 337);
+            this.dataGridView1.Size = new System.Drawing.Size(777, 349);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel2.Controls.Add(this.DateClientes);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.TipoConsultaCmb);
             this.panel2.Controls.Add(this.label2);
@@ -130,7 +132,8 @@
             // 
             this.TipoConsultaCmb.FormattingEnabled = true;
             this.TipoConsultaCmb.Items.AddRange(new object[] {
-            "Clientes"});
+            "Clientes",
+            "ConsultaPorFechaClientes"});
             this.TipoConsultaCmb.Location = new System.Drawing.Point(441, 94);
             this.TipoConsultaCmb.Name = "TipoConsultaCmb";
             this.TipoConsultaCmb.Size = new System.Drawing.Size(121, 21);
@@ -162,12 +165,19 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // DateClientes
+            // 
+            this.DateClientes.Location = new System.Drawing.Point(203, 95);
+            this.DateClientes.Name = "DateClientes";
+            this.DateClientes.Size = new System.Drawing.Size(200, 20);
+            this.DateClientes.TabIndex = 4;
+            // 
             // MenuClientesFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(777, 502);
+            this.ClientSize = new System.Drawing.Size(777, 533);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
@@ -196,5 +206,6 @@
         private System.Windows.Forms.ComboBox TipoConsultaCmb;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DateTimePicker DateClientes;
     }
 }

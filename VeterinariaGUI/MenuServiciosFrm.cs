@@ -17,6 +17,8 @@ namespace VeterinariaGUI
     {
         ServiciosService servicioservice;
         RespuestaConsultaServicio respuestaservicio = new RespuestaConsultaServicio();
+        string TotalServiciosGenerales;
+
         public MenuServiciosFrm()
         {
             var connectionString = ConfigurationManager.ConnectionStrings["ConnectionRochety"].ConnectionString;
@@ -50,6 +52,7 @@ namespace VeterinariaGUI
         {
             serviciosDtg.DataSource = null;
             respuestaservicio = servicioservice.Consultar();
+            TotalServiciosGenerales = servicioservice.SumarValoresServicios().Suma.ToString();
 
             consultar();
 
@@ -59,9 +62,16 @@ namespace VeterinariaGUI
         {
             if (Servicioscmb.SelectedIndex == 0)
             {
-
-                serviciosDtg.DataSource = respuestaservicio.servicios;
+              serviciosDtg.DataSource = respuestaservicio.servicios;
+                TotalServiciosGenerales = servicioservice.SumarValoresServicios().Suma.ToString();
             }
+
+            Llenar();
+        }
+
+        private void Llenar()
+        {
+            Totaltxt.Text= TotalServiciosGenerales;
         }
     }
 }

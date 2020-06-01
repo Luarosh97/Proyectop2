@@ -39,11 +39,21 @@
             this.label2 = new System.Windows.Forms.Label();
             this.MascotaDtg = new System.Windows.Forms.DataGridView();
             this.AgregarMascotaBtn = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.TotalLorostxt = new System.Windows.Forms.TextBox();
+            this.TotalGatostxt = new System.Windows.Forms.TextBox();
+            this.TotalPerrostxt = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.totaltxt = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CerrarBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizarBtn)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MascotaDtg)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -55,7 +65,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(804, 35);
+            this.panel1.Size = new System.Drawing.Size(779, 35);
             this.panel1.TabIndex = 1;
             // 
             // label1
@@ -71,7 +81,7 @@
             // CerrarBtn
             // 
             this.CerrarBtn.Image = ((System.Drawing.Image)(resources.GetObject("CerrarBtn.Image")));
-            this.CerrarBtn.Location = new System.Drawing.Point(769, 6);
+            this.CerrarBtn.Location = new System.Drawing.Point(751, 6);
             this.CerrarBtn.Name = "CerrarBtn";
             this.CerrarBtn.Size = new System.Drawing.Size(25, 25);
             this.CerrarBtn.TabIndex = 7;
@@ -82,7 +92,7 @@
             // 
             this.MinimizarBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.MinimizarBtn.Image = ((System.Drawing.Image)(resources.GetObject("MinimizarBtn.Image")));
-            this.MinimizarBtn.Location = new System.Drawing.Point(738, 6);
+            this.MinimizarBtn.Location = new System.Drawing.Point(720, 7);
             this.MinimizarBtn.Name = "MinimizarBtn";
             this.MinimizarBtn.Size = new System.Drawing.Size(25, 25);
             this.MinimizarBtn.TabIndex = 6;
@@ -93,6 +103,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkOrange;
             this.panel2.Controls.Add(this.BuscarMascotaBtn);
+            this.panel2.Controls.Add(this.AgregarMascotaBtn);
             this.panel2.Controls.Add(this.Mascotacmb);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(0, 37);
@@ -119,7 +130,10 @@
             // 
             this.Mascotacmb.FormattingEnabled = true;
             this.Mascotacmb.Items.AddRange(new object[] {
-            "Mascotas"});
+            "Mascotas",
+            "Perros",
+            "Loros",
+            "Gatos"});
             this.Mascotacmb.Location = new System.Drawing.Point(427, 120);
             this.Mascotacmb.Name = "Mascotacmb";
             this.Mascotacmb.Size = new System.Drawing.Size(121, 21);
@@ -129,7 +143,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Showcard Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(5, 17);
+            this.label2.Location = new System.Drawing.Point(242, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(208, 27);
             this.label2.TabIndex = 0;
@@ -139,10 +153,11 @@
             // 
             this.MascotaDtg.BackgroundColor = System.Drawing.SystemColors.Control;
             this.MascotaDtg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.MascotaDtg.Location = new System.Drawing.Point(0, 228);
+            this.MascotaDtg.Location = new System.Drawing.Point(0, 233);
             this.MascotaDtg.Name = "MascotaDtg";
-            this.MascotaDtg.Size = new System.Drawing.Size(831, 312);
+            this.MascotaDtg.Size = new System.Drawing.Size(779, 229);
             this.MascotaDtg.TabIndex = 8;
+            this.MascotaDtg.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MascotaDtg_CellContentClick);
             // 
             // AgregarMascotaBtn
             // 
@@ -151,7 +166,7 @@
             this.AgregarMascotaBtn.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AgregarMascotaBtn.Image = ((System.Drawing.Image)(resources.GetObject("AgregarMascotaBtn.Image")));
             this.AgregarMascotaBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.AgregarMascotaBtn.Location = new System.Drawing.Point(0, 157);
+            this.AgregarMascotaBtn.Location = new System.Drawing.Point(88, 87);
             this.AgregarMascotaBtn.Name = "AgregarMascotaBtn";
             this.AgregarMascotaBtn.Size = new System.Drawing.Size(75, 70);
             this.AgregarMascotaBtn.TabIndex = 16;
@@ -160,13 +175,93 @@
             this.AgregarMascotaBtn.UseVisualStyleBackColor = false;
             this.AgregarMascotaBtn.Click += new System.EventHandler(this.AgregarMascotaBtn_Click);
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel3.Controls.Add(this.totaltxt);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.TotalPerrostxt);
+            this.panel3.Controls.Add(this.TotalGatostxt);
+            this.panel3.Controls.Add(this.TotalLorostxt);
+            this.panel3.Location = new System.Drawing.Point(0, 454);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(804, 88);
+            this.panel3.TabIndex = 17;
+            // 
+            // TotalLorostxt
+            // 
+            this.TotalLorostxt.Location = new System.Drawing.Point(247, 43);
+            this.TotalLorostxt.Name = "TotalLorostxt";
+            this.TotalLorostxt.Size = new System.Drawing.Size(100, 20);
+            this.TotalLorostxt.TabIndex = 0;
+            // 
+            // TotalGatostxt
+            // 
+            this.TotalGatostxt.Location = new System.Drawing.Point(397, 43);
+            this.TotalGatostxt.Name = "TotalGatostxt";
+            this.TotalGatostxt.Size = new System.Drawing.Size(100, 20);
+            this.TotalGatostxt.TabIndex = 1;
+            // 
+            // TotalPerrostxt
+            // 
+            this.TotalPerrostxt.Location = new System.Drawing.Point(552, 43);
+            this.TotalPerrostxt.Name = "TotalPerrostxt";
+            this.TotalPerrostxt.Size = new System.Drawing.Size(100, 20);
+            this.TotalPerrostxt.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(262, 24);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Total Loros";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(412, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(62, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Total Gatos";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(565, 24);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(64, 13);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Total Perros";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(140, 24);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(34, 13);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Total ";
+            // 
+            // totaltxt
+            // 
+            this.totaltxt.Location = new System.Drawing.Point(106, 43);
+            this.totaltxt.Name = "totaltxt";
+            this.totaltxt.Size = new System.Drawing.Size(100, 20);
+            this.totaltxt.TabIndex = 7;
+            // 
             // MenuMascotasFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(804, 540);
-            this.Controls.Add(this.AgregarMascotaBtn);
+            this.ClientSize = new System.Drawing.Size(779, 540);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.MascotaDtg);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -180,6 +275,8 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MascotaDtg)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -196,5 +293,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView MascotaDtg;
         private System.Windows.Forms.Button AgregarMascotaBtn;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox TotalPerrostxt;
+        private System.Windows.Forms.TextBox TotalGatostxt;
+        private System.Windows.Forms.TextBox TotalLorostxt;
+        private System.Windows.Forms.TextBox totaltxt;
+        private System.Windows.Forms.Label label6;
     }
 }

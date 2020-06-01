@@ -143,6 +143,77 @@ namespace BLL
             finally { conexion.Close(); }
 
         }
+        public ConteoMascotaTipoRespuesta TotalizarTipo(string tipo)
+        {
+            ConteoMascotaTipoRespuesta respuesta = new ConteoMascotaTipoRespuesta();
+            try
+            {
+
+                conexion.Open();
+                respuesta.Cuenta = mascotarepositorio.TotalizarTipo(tipo);
+                conexion.Close();
+                respuesta.Error = false;
+                respuesta.Mensaje = "Se consultan los Datos";
+
+                return respuesta;
+            }
+            catch (Exception e)
+            {
+                respuesta.Mensaje = $"Error de la Aplicacion: {e.Message}";
+                respuesta.Error = true;
+                return respuesta;
+            }
+            finally { conexion.Close(); }
+
+        }
+
+        public ConteoMascotaTipoRespuesta Totalizar()
+        {
+           ConteoMascotaTipoRespuesta respuesta = new ConteoMascotaTipoRespuesta();
+            try
+            {
+
+                conexion.Open();
+                respuesta.Cuenta = mascotarepositorio.Totalizar(); 
+                conexion.Close();
+                respuesta.Error = false;
+                respuesta.Mensaje = "Se consultan los Datos";
+
+                return respuesta;
+            }
+            catch (Exception e)
+            {
+                respuesta.Mensaje = $"Error de la Aplicacion: {e.Message}";
+                respuesta.Error = true;
+                return respuesta;
+            }
+            finally { conexion.Close(); }
+
+        }
+
+        public IList<Mascota> ConsultarPerros()
+        {
+            conexion.Open();
+            IList<Mascota> mascotas = mascotarepositorio.ConsultarPerros();
+            conexion.Close();
+            return mascotas;
+        }
+
+        public IList<Mascota> ConsultarLoros()
+        {
+            conexion.Open();
+            IList<Mascota> mascotas = mascotarepositorio.ConsultarLoros();
+            conexion.Close();
+            return mascotas;
+        }
+
+        public IList<Mascota> ConsultarGatos()
+        {
+            conexion.Open();
+            IList<Mascota> mascotas = mascotarepositorio.ConsultarGatos();
+            conexion.Close();
+            return mascotas;
+        }
 
     }
 }

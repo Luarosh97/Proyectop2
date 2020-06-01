@@ -22,5 +22,13 @@ namespace BLL
         public Servicio servicio { get; set; }
     }
 
+    public class SumarServicioRespuesta {
+
+        public bool Error { get; set; }
+        public string Mensaje { get; set; }
+        public decimal Suma { get; set; }
+
+    }
+
 }
 

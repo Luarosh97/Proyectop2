@@ -11,6 +11,7 @@ namespace DAL
     public class ServiciosRepository
     {
         private readonly SqlConnection _connection;
+        
         public ServiciosRepository(ConnectionManager connection)
         {
             _connection = connection._conexion;
@@ -102,6 +103,13 @@ namespace DAL
                 command.Parameters.AddWithValue("@PrecioServicio", Servicio.PrecioServicio);
                 var filas = command.ExecuteNonQuery();
             }
+        }
+
+
+        public decimal SumarValorServicios()
+        {
+            return   ConsultarServicios().Sum(S => S.PrecioServicio);
+
         }
     }
 }

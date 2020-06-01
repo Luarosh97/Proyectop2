@@ -20,6 +20,11 @@ namespace VeterinariaGUI
 
         MascotaService mascotaService;
         ResponseConsultaMascota respuestaconsulta;
+        string TotalPerros;
+        string TotalGatos;
+        string TotalLoros;
+        string Total;
+    
         public MenuMascotasFrm()
         {
             var connectionString = ConfigurationManager.ConnectionStrings["ConnectionRochety"].ConnectionString;
@@ -57,6 +62,10 @@ namespace VeterinariaGUI
         {
             MascotaDtg.DataSource = null;
             respuestaconsulta = mascotaService.Consultar();
+            Total = mascotaService.Totalizar().Cuenta.ToString();
+            TotalPerros = mascotaService.TotalizarTipo("Perro").Cuenta.ToString();
+            TotalGatos = mascotaService.TotalizarTipo("Gato").Cuenta.ToString();
+            TotalLoros= mascotaService.TotalizarTipo("Loro").Cuenta.ToString();
 
             consultar();
         }
@@ -65,8 +74,46 @@ namespace VeterinariaGUI
         {
             if (Mascotacmb.SelectedIndex == 0)
             {
-              MascotaDtg.DataSource = respuestaconsulta.mascotas;
+                MascotaDtg.DataSource = respuestaconsulta.mascotas;
             }
+            else if (Mascotacmb.SelectedIndex==1) {
+                MascotaDtg.DataSource = mascotaService.ConsultarPerros();
+                TotalPerros = mascotaService.TotalizarTipo("Perro").Cuenta.ToString();
+                TotalGatos = "0";
+                TotalLoros = "0";
+                Total = TotalPerros;
+
+            }
+            else if (Mascotacmb.SelectedIndex==2) {
+                MascotaDtg.DataSource = mascotaService.ConsultarLoros();
+                TotalLoros = mascotaService.TotalizarTipo("Loro").Cuenta.ToString();
+                TotalGatos = "0";
+                TotalPerros = "0";
+                Total = TotalLoros;
+
+            }
+            else if (Mascotacmb.SelectedIndex==3) {
+                MascotaDtg.DataSource = mascotaService.ConsultarGatos();
+                TotalGatos= mascotaService.TotalizarTipo("Gato").Cuenta.ToString();
+                TotalPerros = "0";
+                TotalLoros = "0";
+                Total = TotalGatos;
+
+            }
+            Llenar();
+        }
+
+        private void Llenar()
+        {
+            TotalPerrostxt.Text = TotalPerros;
+            TotalLorostxt.Text = TotalLoros;
+            TotalGatostxt.Text = TotalGatos;
+            totaltxt.Text = Total;
+        }
+
+        private void MascotaDtg_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

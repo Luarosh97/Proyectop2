@@ -39,11 +39,15 @@
             this.Servicioscmb = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.serviciosDtg = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.Totaltxt = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CerrarBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizarBtn)).BeginInit();
             this.VeterinarioCmb.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.serviciosDtg)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -55,7 +59,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 35);
+            this.panel1.Size = new System.Drawing.Size(714, 35);
             this.panel1.TabIndex = 3;
             // 
             // label1
@@ -71,7 +75,7 @@
             // CerrarBtn
             // 
             this.CerrarBtn.Image = ((System.Drawing.Image)(resources.GetObject("CerrarBtn.Image")));
-            this.CerrarBtn.Location = new System.Drawing.Point(763, 10);
+            this.CerrarBtn.Location = new System.Drawing.Point(681, 7);
             this.CerrarBtn.Name = "CerrarBtn";
             this.CerrarBtn.Size = new System.Drawing.Size(25, 25);
             this.CerrarBtn.TabIndex = 7;
@@ -82,7 +86,7 @@
             // 
             this.MinimizarBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.MinimizarBtn.Image = ((System.Drawing.Image)(resources.GetObject("MinimizarBtn.Image")));
-            this.MinimizarBtn.Location = new System.Drawing.Point(732, 10);
+            this.MinimizarBtn.Location = new System.Drawing.Point(650, 7);
             this.MinimizarBtn.Name = "MinimizarBtn";
             this.MinimizarBtn.Size = new System.Drawing.Size(25, 25);
             this.MinimizarBtn.TabIndex = 6;
@@ -98,7 +102,7 @@
             this.VeterinarioCmb.Controls.Add(this.label2);
             this.VeterinarioCmb.Location = new System.Drawing.Point(0, 38);
             this.VeterinarioCmb.Name = "VeterinarioCmb";
-            this.VeterinarioCmb.Size = new System.Drawing.Size(959, 181);
+            this.VeterinarioCmb.Size = new System.Drawing.Size(959, 176);
             this.VeterinarioCmb.TabIndex = 5;
             // 
             // AgregarServicioBtn
@@ -108,7 +112,7 @@
             this.AgregarServicioBtn.Font = new System.Drawing.Font("Showcard Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AgregarServicioBtn.Image = ((System.Drawing.Image)(resources.GetObject("AgregarServicioBtn.Image")));
             this.AgregarServicioBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.AgregarServicioBtn.Location = new System.Drawing.Point(137, 89);
+            this.AgregarServicioBtn.Location = new System.Drawing.Point(90, 62);
             this.AgregarServicioBtn.Name = "AgregarServicioBtn";
             this.AgregarServicioBtn.Size = new System.Drawing.Size(89, 70);
             this.AgregarServicioBtn.TabIndex = 16;
@@ -123,7 +127,7 @@
             this.BuscarServiciosBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BuscarServiciosBtn.Image = ((System.Drawing.Image)(resources.GetObject("BuscarServiciosBtn.Image")));
             this.BuscarServiciosBtn.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BuscarServiciosBtn.Location = new System.Drawing.Point(557, 102);
+            this.BuscarServiciosBtn.Location = new System.Drawing.Point(572, 75);
             this.BuscarServiciosBtn.Name = "BuscarServiciosBtn";
             this.BuscarServiciosBtn.Size = new System.Drawing.Size(75, 57);
             this.BuscarServiciosBtn.TabIndex = 2;
@@ -137,7 +141,7 @@
             this.Servicioscmb.FormattingEnabled = true;
             this.Servicioscmb.Items.AddRange(new object[] {
             "Servicios"});
-            this.Servicioscmb.Location = new System.Drawing.Point(378, 125);
+            this.Servicioscmb.Location = new System.Drawing.Point(408, 95);
             this.Servicioscmb.Name = "Servicioscmb";
             this.Servicioscmb.Size = new System.Drawing.Size(121, 21);
             this.Servicioscmb.TabIndex = 1;
@@ -146,7 +150,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Showcard Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(253, 33);
+            this.label2.Location = new System.Drawing.Point(238, 17);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(204, 27);
             this.label2.TabIndex = 0;
@@ -157,17 +161,44 @@
             // 
             this.serviciosDtg.BackgroundColor = System.Drawing.SystemColors.Control;
             this.serviciosDtg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.serviciosDtg.Location = new System.Drawing.Point(0, 216);
+            this.serviciosDtg.Location = new System.Drawing.Point(0, 211);
             this.serviciosDtg.Name = "serviciosDtg";
-            this.serviciosDtg.Size = new System.Drawing.Size(798, 321);
+            this.serviciosDtg.Size = new System.Drawing.Size(716, 289);
             this.serviciosDtg.TabIndex = 15;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel2.Controls.Add(this.Totaltxt);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Location = new System.Drawing.Point(0, 496);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(716, 70);
+            this.panel2.TabIndex = 16;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(478, 24);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Total Servicios";
+            // 
+            // Totaltxt
+            // 
+            this.Totaltxt.Location = new System.Drawing.Point(561, 21);
+            this.Totaltxt.Name = "Totaltxt";
+            this.Totaltxt.Size = new System.Drawing.Size(100, 20);
+            this.Totaltxt.TabIndex = 1;
             // 
             // MenuServiciosFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(800, 540);
+            this.ClientSize = new System.Drawing.Size(714, 565);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.serviciosDtg);
             this.Controls.Add(this.VeterinarioCmb);
             this.Controls.Add(this.panel1);
@@ -181,6 +212,8 @@
             this.VeterinarioCmb.ResumeLayout(false);
             this.VeterinarioCmb.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.serviciosDtg)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -197,5 +230,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button AgregarServicioBtn;
         private System.Windows.Forms.DataGridView serviciosDtg;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox Totaltxt;
+        private System.Windows.Forms.Label label3;
     }
 }
