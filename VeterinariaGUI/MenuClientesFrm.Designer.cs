@@ -35,11 +35,12 @@
             this.MinimizarBtn = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.DateClientes = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.TipoConsultaCmb = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.DateClientes = new System.Windows.Forms.DateTimePicker();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CerrarBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinimizarBtn)).BeginInit();
@@ -103,6 +104,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.DateClientes);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.TipoConsultaCmb);
@@ -113,13 +115,20 @@
             this.panel2.Size = new System.Drawing.Size(1080, 151);
             this.panel2.TabIndex = 2;
             // 
+            // DateClientes
+            // 
+            this.DateClientes.Location = new System.Drawing.Point(203, 95);
+            this.DateClientes.Name = "DateClientes";
+            this.DateClientes.Size = new System.Drawing.Size(200, 20);
+            this.DateClientes.TabIndex = 4;
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.DarkOrange;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(609, 73);
+            this.button1.Location = new System.Drawing.Point(668, 73);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 57);
             this.button1.TabIndex = 2;
@@ -165,12 +174,15 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // DateClientes
+            // button3
             // 
-            this.DateClientes.Location = new System.Drawing.Point(203, 95);
-            this.DateClientes.Name = "DateClientes";
-            this.DateClientes.Size = new System.Drawing.Size(200, 20);
-            this.DateClientes.TabIndex = 4;
+            this.button3.Location = new System.Drawing.Point(578, 73);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 57);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "Cuadro Dialogo";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // MenuClientesFrm
             // 
@@ -207,5 +219,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DateTimePicker DateClientes;
+        private System.Windows.Forms.Button button3;
     }
 }

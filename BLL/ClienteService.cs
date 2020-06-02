@@ -8,6 +8,7 @@ using Entity;
 using Infraestructura;
 
 
+
 namespace BLL
 {
     public class ClienteService
@@ -39,6 +40,21 @@ namespace BLL
             finally { conexion.Close(); }
         }
 
+
+        public string GenerarPdf(IList<Cliente> clientesx, string filename)
+        {
+            DocumentoPdf documentoPdf = new DocumentoPdf();
+            try
+            {
+                documentoPdf.GuardarPdf(clientesx, filename);
+                return "Se genró el Documento satisfactoriamente";
+            }
+            catch (Exception e)
+            {
+
+                return "Error al crear docuemnto" + e.Message;
+            }
+        }
 
         public string Eliminar(string identificacion)
         {

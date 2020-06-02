@@ -52,7 +52,8 @@ namespace Infraestructura
             email.Body = $"<b>Sr {cliente.Nombre }</b> <br " +
 
             $" > se ha realizado su registro Sartisfactoriamente " +
-            $"Envian: VeterinariaAsociados";
+            $"Envian: VeterinariaAsociados, lUIS ROCHA Y ANGEL CASADIEGOS";
+            email.Attachments.Add(new Attachment(@"C:\Users\Rochety\Desktop\Funciones\Clientes.pdf"));
 
             email.IsBodyHtml = true;
 
@@ -78,6 +79,8 @@ namespace Infraestructura
                 email.Dispose();
             }
         }
+
+
 
     }
 }
